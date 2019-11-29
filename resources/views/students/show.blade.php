@@ -7,7 +7,6 @@
 <div class="container">
 	<div class="row">
 		<div class="col-6">
-			<h2>Daftar Mahasiswa</h2>
 
 				<div class="container">
 					<div class="row">
@@ -19,9 +18,16 @@
 							    <h6 class="card-subtitle mb-2 text-muted">{{$student->email}}</h6>
 							    <p class="card-subtitle mb-2 text-muted">{{$student->nrp}}</p>
 							    <p class="card-subtitle mb-2 text-muted">{{$student->jurusan}}</p>
-							    <a href="#" class="btn btn-success">Edit</a>
-							    <a href="#" class="btn btn-danger">Delete</a>
-							    <a href="{{url('student/')}}" class="card-link">kembali</a>
+							   
+							    <a href="{{$student->id}}/edit" class="btn btn-success">Edit</a>
+
+							    <form action="/student/{{$student->id}}" method="post" class="d-inline">
+							    	@method('delete')
+							    	@csrf
+							    	<button type="submit" class="btn btn-danger">Delete</button>
+							    </form>
+
+							    <a href="/student" class="card-link">Kembali</a>
 							  </div>
 							</div>
 						</div>

@@ -7,7 +7,6 @@
 <div class="container">
 	<div class="row">
 		<div class="col-6">
-			<h2>Daftar Mahasiswa</h2>
 
 				<div class="container">
 					<div class="row">
