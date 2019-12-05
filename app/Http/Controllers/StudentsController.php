@@ -89,7 +89,7 @@ class StudentsController extends Controller
      * @param  \App\Students  $students
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, Student $students)
     {
         $request->validate([
             'nama' => 'required',
@@ -97,13 +97,14 @@ class StudentsController extends Controller
             'email' => 'required',
             'jurusan' => 'required'
         ]);
-        Student::where('id',$student->id)->update([
-            'nama' => $request->nama,
-            'nrp' => $request->nrp,
-            'email' => $request->email,
-            'jurusan' => $request->jurusan
-        ]);
+        // Student::where('id',$student->id)->update([
+        //     'nama' => $request->nama,
+        //     'nrp' => $request->nrp,
+        //     'email' => $request->email,
+        //     'jurusan' => $request->jurusan
+        // ]);
 
+        Student::create($request->all());
         return redirect('/students')->with('status', 'Data Berhasil Diubah!');
     }
 

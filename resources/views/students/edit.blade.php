@@ -12,7 +12,7 @@
 				@csrf
 				<div class="form-group">
 					<label for="nama">Nama</label>
-					<input type="text" class="form-controll @error('nama') is-valid @enderror" id="nama" placeholder="Masukan Nama...">
+					<input type="text" class="form-controll @error('nama') is-valid @enderror" id="nama" placeholder="Masukan Nama..." value="{{$students->nama}}">
 					@error('nama')
 						<div class="invalid-feedback">{{$message}}</div>
 					@enderror
